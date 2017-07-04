@@ -422,6 +422,7 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
+
                 <li class="sub-menu dcjq-parent-li">
                     <a href="boxed_page.html" class="dcjq-parent">
                         <i class="fa  fa-twitter-square" style="font-size: 20px;"></i>
@@ -451,6 +452,7 @@
                                 </li>
                             </ul>
                         </li>
+
                         <li>
                             <a href="{{ url('admin/school/index') }}">
                                 证卡管理
@@ -507,7 +509,6 @@
                         </li>
                     </ul>
                 </li>
-
                 <li class="sub-menu dcjq-parent-li">
                     <a href="boxed_page.html" class="dcjq-parent">
                         <i class="fa  fa-twitter-square" style="font-size: 20px;"></i>
@@ -833,12 +834,9 @@
     <!-- END FOOTER  -->
 </section>
 
-<footer class="site-footer">
+<footer class="site-footer" style="top:500px;">
     <div class="text-center">
-        2013 © Olive Admin by
-        <a href="" target="_blank">
-            Olive Enterprise
-        </a>
+        <span>今天是公历：{{ date('Y', time()) }} 年 {{ date('m', time()) }} 月 {{ date('d', time()) }} 日</span>
         <a href="#" class="go-top">
             <i class="fa fa-angle-up">
             </i>

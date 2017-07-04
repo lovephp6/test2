@@ -482,16 +482,6 @@
 @yield('contents')
 
 
-<!-- BEGIN FOOTER -->
-{{--<footer class="site-footer">--}}
-{{--<div class="text-center">--}}
-{{--2013 &copy; Olive Admin by <a href="" target="_blank">Olive Enterprise</a>.--}}
-{{--<a href="#" class="go-top">--}}
-{{--<i class="fa fa-angle-up"></i>--}}
-{{--</a>--}}
-{{--</div>--}}
-{{--</footer>--}}
-<!-- END FOOTER  -->
 </section>
 <footer class="site-footer" style="top:500px;">
     <div class="text-center">
