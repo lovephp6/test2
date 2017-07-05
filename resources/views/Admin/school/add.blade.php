@@ -273,12 +273,9 @@
         <!-- BEGIN ROW  -->
         <section class="panel">
             <header class="panel-heading">
-               <span class="label btn-info" style="width:100px;height:35px;line-height:40px;">
-                    　　学籍管理　　
-                    </span>　
-                <span class="label btn-info" style="width:100px;height:35px;">
-                    　　注册学籍　　
-                    </span>
+                <span class="label label-primary"><a href="{{ url('admin/school/index') }}" style="color:#FFF;">　　学籍档案　　</a></span>　
+                <span class="label label-danger"><a href="{{ url('admin/school/add') }}" style="color:#FFF;">　　注册学籍　　</a></span>　
+                <span class="label label-danger"><a href="{{ url('admin/school/students_img') }}" style="color:#FFF;">　　上传附件　　</a></span>
                 <div class="pull-right">
                     <tr>
                         <td align="right"></td>
@@ -295,25 +292,6 @@
                 </div>
             </header><div class="panel" >
                 <section class="panel col-md-12">
-                    <header class="panel-heading tab-bg-dark-navy-blue" style="background: #41cac0;font-weight: bold">
-                        <ul class="nav nav-tabs">
-                            <li class="active">
-                                <a data-toggle="tab" href="#xsxk">　注册学籍　</a>
-                            </li>
-                            <li class="">
-                                <a data-toggle="tab" href="#xszs">　教务信息　</a>
-                            </li>
-                            <li class="">
-                                <a data-toggle="tab" href="#pxzs">　招生信息　</a>
-                            </li>
-                            <li class="">
-                                <a data-toggle="tab" href="#jyzs">　就业信息　</a>
-                            </li>
-                            <li class="">
-                                <a data-toggle="tab" href="#scfj">　上传附件　</a>
-                            </li>
-                        </ul>
-                    </header>
                     <div class="panel-body">
                         <div class="tab-content">
                             <div id="xsxk" class="tab-pane active">
@@ -485,54 +463,6 @@
                                     </form>
                                 </div>
                             </div>
-                            <div id="xszs" class="tab-pane"><div class="panel-body">
-                                    <form class="form-horizontal" role="form">
-                                        <div class="form-group">
-                                            <label for="inputEmail1" class="col-lg-1 col-sm-1 control-label" style="text-align: right">证书编号2</label>
-                                            <div class="col-lg-5">
-                                                <input type="email" class="form-control" id="inputEmail1" placeholder="">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="col-lg-offset-1 col-lg-5">
-                                                <button type="submit" class="btn btn-danger">　　保　存　　 </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div></div>
-                            <div id="pxzs" class="tab-pane"><div class="panel-body">
-                                    <form class="form-horizontal" role="form">
-                                        <div class="form-group">
-                                            <label for="inputEmail1" class="col-lg-1 col-sm-1 control-label" style="text-align: right">证书编号3</label>
-                                            <div class="col-lg-5">
-                                                <input type="email" class="form-control" id="inputEmail1" placeholder="">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="col-lg-offset-1 col-lg-5">
-                                                <button type="submit" class="btn btn-danger">　　保　存　　 </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div></div>
-                            <div id="jyzs" class="tab-pane"><div class="panel-body">
-                                    <form class="form-horizontal" role="form">
-                                        <div class="form-group">
-                                            <label for="inputEmail1" class="col-lg-1 col-sm-1 control-label" style="text-align: right">证书编号4</label>
-                                            <div class="col-lg-5">
-                                                <input type="email" class="form-control" id="inputEmail1" placeholder="">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="col-lg-offset-1 col-lg-5">
-                                                <button type="submit" class="btn btn-danger">　　保　存　　 </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div></div>
-                            <div id="scfj" class="tab-pane"><div class="panel-body">
-
-                                </div></div>
                             <div id="contact" class="tab-pane">Contact</div>
                         </div>
                     </div>

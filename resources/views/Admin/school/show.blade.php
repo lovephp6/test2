@@ -268,27 +268,6 @@
 
     </script>
 
-    {{--<script type="text/javascript">--}}
-    {{--var national = [--}}
-    {{--"汉族", "壮族", "满族", "回族", "苗族", "维吾尔族", "土家族", "彝族", "蒙古族", "藏族", "布依族", "侗族", "瑶族", "朝鲜族", "白族", "哈尼族",--}}
-    {{--"哈萨克族", "黎族", "傣族", "畲族", "傈僳族", "仡佬族", "东乡族", "高山族", "拉祜族", "水族", "佤族", "纳西族", "羌族", "土族", "仫佬族", "锡伯族",--}}
-    {{--"柯尔克孜族", "达斡尔族", "景颇族", "毛南族", "撒拉族", "布朗族", "塔吉克族", "阿昌族", "普米族", "鄂温克族", "怒族", "京族", "基诺族", "德昂族", "保安族",--}}
-    {{--"俄罗斯族", "裕固族", "乌孜别克族", "门巴族", "鄂伦春族", "独龙族", "塔塔尔族", "赫哲族", "珞巴族"--}}
-    {{--];--}}
-    {{--window.onload = function ()--}}
-    {{--{--}}
-    {{--var nat = document.getElementById ("national");--}}
-    {{--for ( var i = 0; i < national.length; i++)--}}
-    {{--{--}}
-    {{--var option = document.createElement ('option');--}}
-    {{--option.value = i;--}}
-    {{--var txt = document.createTextNode (national[i]);--}}
-    {{--option.appendChild (txt);--}}
-    {{--nat.appendChild (option);--}}
-    {{--}--}}
-    {{--}--}}
-    {{--</script>--}}
-
     <section id="main-content">
         <section class="wrapper site-min-height">
             <!-- BEGIN ROW  -->
@@ -298,10 +277,43 @@
                     　　学籍管理　　
                     </span>　
                     <span class="label btn-info" style="width:100px;height:35px;">
-                    　　学籍详情　　
+                    　　注册学籍　　
                     </span>
+                    <div class="pull-right">
+                        <tr>
+                            <td align="right"></td>
+                            <td><font id="errorMsg"></font></td>
+                        </tr>
+                        <tr class="con_color">
+                            <td>&nbsp;</td>
+                            <td><input type="button" class="btn btn-info"  name="connect" style="height:30px;font-size:12px;font-weight:bold;" value="　连接设备　" onclick="connect()"></td>　
+                            {{--<td><button name="readCert" class="btn btn-primary">读取数据</button></td>--}}
+                            {{--<td><input type="button" name="getStatus" value="连接状态" onclick="getStatus()"></td>--}}
+                            <td><input type="button" class="btn btn-info" name="readCert" style="height:30px;font-size:12px;font-weight:bold;" value="　读取数据　" onclick="readCert()"></td>
+                            {{--<td><input type="button" name="disconnect" value="disconnect" onclick="disconnect()"></td>--}}
+                        </tr>
+                    </div>
                 </header><div class="panel" >
                     <section class="panel col-md-12">
+                        <header class="panel-heading tab-bg-dark-navy-blue" style="background: #41cac0;font-weight: bold">
+                            <ul class="nav nav-tabs">
+                                <li class="active">
+                                    <a data-toggle="tab" href="#xsxk">　注册学籍　</a>
+                                </li>
+                                <li class="">
+                                    <a data-toggle="tab" href="#xszs">　教务信息　</a>
+                                </li>
+                                <li class="">
+                                    <a data-toggle="tab" href="#pxzs">　招生信息　</a>
+                                </li>
+                                <li class="">
+                                    <a data-toggle="tab" href="#jyzs">　就业信息　</a>
+                                </li>
+                                <li class="">
+                                    <a data-toggle="tab" href="#scfj">　上传附件　</a>
+                                </li>
+                            </ul>
+                        </header>
                         <div class="panel-body">
                             <div class="tab-content">
                                 <div id="xsxk" class="tab-pane active">
@@ -463,14 +475,60 @@
                                                 </tr>
                                             </table><br>
                                             {{--<center>--}}
-                                                {{--<button class="btn btn-info" id="tijiao" style="width:200px;">提交</button>--}}
+                                            {{--<button class="btn btn-info" id="tijiao" style="width:200px;">提交</button>--}}
                                             {{--</center>--}}
                                         </form>
                                     </div>
                                 </div>
+                                <div id="xszs" class="tab-pane"><div class="panel-body">
+                                        <form class="form-horizontal" role="form">
+                                            <div class="form-group">
+                                                <label for="inputEmail1" class="col-lg-1 col-sm-1 control-label" style="text-align: right">证书编号2</label>
+                                                <div class="col-lg-5">
+                                                    <input type="email" class="form-control" id="inputEmail1" placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-lg-offset-1 col-lg-5">
+                                                    <button type="submit" class="btn btn-danger">　　保　存　　 </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div></div>
+                                <div id="pxzs" class="tab-pane"><div class="panel-body">
+                                        <form class="form-horizontal" role="form">
+                                            <div class="form-group">
+                                                <label for="inputEmail1" class="col-lg-1 col-sm-1 control-label" style="text-align: right">证书编号3</label>
+                                                <div class="col-lg-5">
+                                                    <input type="email" class="form-control" id="inputEmail1" placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-lg-offset-1 col-lg-5">
+                                                    <button type="submit" class="btn btn-danger">　　保　存　　 </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div></div>
+                                <div id="jyzs" class="tab-pane"><div class="panel-body">
+                                        <form class="form-horizontal" role="form">
+                                            <div class="form-group">
+                                                <label for="inputEmail1" class="col-lg-1 col-sm-1 control-label" style="text-align: right">证书编号4</label>
+                                                <div class="col-lg-5">
+                                                    <input type="email" class="form-control" id="inputEmail1" placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-lg-offset-1 col-lg-5">
+                                                    <button type="submit" class="btn btn-danger">　　保　存　　 </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div></div>
+                                <div id="scfj" class="tab-pane"><div class="panel-body">
 
                                     </div></div>
-                    </section>
+                                <div id="contact" class="tab-pane">Contact</div>
                             </div>
                         </div>
                     </section>
@@ -481,7 +539,104 @@
 
 
 
+        <div style="display:none">
 
+            <div border="0" width="100%" cellpadding="0" cellspacing="0">
+
+                <tr>
+                    <td align="right">姓名：</td>
+                    <td><input type="text" name="" size="49">(要求中间，两头都没有空格)</td>
+                </tr>
+
+                <tr>
+                    <td align="right">性别：</td>
+                    <td><input type="text" name="" size="49">(取值为“1”（表示“男”）或“0”（表示“女”）)</td>
+                </tr>
+
+                <tr>
+                    <td align="right">民族：</td>
+                    <td><input type="text" name="" size="49">(汉字即可)</td>
+                </tr>
+
+                <tr>
+                    <td align="right">出生：</td>
+                    <td><input type="text" name="" size="49">(要求格式为:yyyyMMdd，长度为8)</td>
+                </tr>
+
+                <tr>
+                    <td align="right">地址：</td>
+                    <td><input type="text" name="" size="49"></td>
+                </tr>
+
+
+                <tr>
+                    <td align="right">身份证号：</td>
+                    <td><input type="text" name="" size="49" style="color: #FF0000">(居民身份号码，长度18位)</td>
+                </tr>
+
+
+                <tr>
+                    <td align="right">签发机关：</td>
+                    <td><input type="text" name="Police" size="49"></td>
+                </tr>
+
+                <tr>
+                    <td align="right">期限起始：</td>
+                    <td><input type="text" name="ActivityLFrom" size="49">(要求格式为:yyyyMMdd，长度为8)</td>
+                </tr>
+
+
+                <tr>
+                    <td align="right">期限失效：</td>
+                    <td><input type="text" name="ActivityLTo" size="49">(要求格式为:yyyyMMdd，长度为8)</td>
+                </tr>
+
+                <tr>
+                    <td align="right">resultFlag：</td>
+                    <td><font id="resultFlag"></font></td>
+                </tr>
+            </div>
+        </div>
+        {{--<tr>--}}
+        {{--<td align="right"></td>--}}
+        {{--<td><font id="errorMsg"></font></td>--}}
+        {{--</tr>--}}
+        <div style="display: none;">
+            <tr>
+                <td align="right">status：</td>
+                <td><font id="status"></font></td>
+            </tr>
+
+
+
+            <tr>
+                <td align="right">返回信息：</td>
+                <td><font id="ret"></font></td>
+            </tr>
+
+            <tr>
+                <td align="left">
+                    <img name="Base64Jpg0Display" />(Jpg照片，在IE8中可以显示)
+                </td>
+            </tr>
+
+            <tr>
+                <td align="left">
+                    <img name="Base64Jpg1Display" />(Jpg照片，在IE8中可以显示)
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    <img name="Base64Jpg2Display" />(Jpg照片，在IE8中可以显示)
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    <img name="Base64Jpg3Display" />(Jpg照片，在IE8中可以显示)
+                </td>
+            </tr>
+            </table>
+        </div>
 
     </section>
     </section>

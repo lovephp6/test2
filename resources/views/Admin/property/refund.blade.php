@@ -143,7 +143,7 @@
                                             <td class="form_line_height">退款单号</td>
                                             <td><input class="form-control in_bgw" type="text" name="refund_num"></td>
                                             <td class="form_line_height">退款日期</td>
-                                            <td><input class="form-control in_bgw" type="text" name="refund_date"></td>
+                                            <td><input class="form-control in_bgw" type="text" name="refund_date" value="{{ date('Y-m-d', time()) }}"></td>
                                         </tr>
                                         <tr>
                                             <td colspan="6"><button class="btn btn-info">　　提交　　</button>　　 <a href="{{ url('admin/property/shouju') }}" class="btn btn-info">　　预览　　</a></td>

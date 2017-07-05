@@ -12,8 +12,8 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            <span class="label label-primary">　　财务管理　　</span>　
-                            <span class="label label-danger"><a href="{{ url('admin/school/add') }}" style="color:#FFF;">　　收费统计　　</a></span>
+                            <span class="label label-primary"><a href="{{ url('admin/property/total_money') }}" style="color:#FFF;">　　收费统计　　</a></span>　
+                            <span class="label label-danger"><a href="{{ url('admin/property/tuition_fee') }}" style="color:#FFF;">　　收取学费　　</a></span>
                             <span class="tools pull-right">
                        <a href="javascript:;" class="fa fa-chevron-down"></a>
                        <a href="javascript:;" class="fa fa-times"></a>

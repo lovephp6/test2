@@ -8,9 +8,9 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            <a href="{{ url('admin/school/index') }}"><span class="label label-primary">　　学籍管理　　</span>　</a>
-                            <span class="label label-danger"><a href="{{ url('admin/school/add') }}" style="color:#FFF;">　　学籍档案　　</a></span>　
-                            <span class="label label-danger"><a href="{{ url('admin/school/add') }}" style="color:#FFF;">　　上传附件　　</a></span>
+                            <span class="label label-primary"><a href="{{ url('admin/school/index') }}" style="color:#FFF;">　　学籍档案　　</a></span>　
+                            <span class="label label-danger"><a href="{{ url('admin/school/add') }}" style="color:#FFF;">　　注册学籍　　</a></span>　
+                            <span class="label label-danger"><a href="{{ url('admin/school/students_img') }}" style="color:#FFF;">　　上传附件　　</a></span>
                             <span class="tools pull-right">
                        <a href="javascript:;" class="fa fa-chevron-down"></a>
                        <a href="javascript:;" class="fa fa-times"></a>
@@ -18,6 +18,7 @@
                         </header>
                         <div class="panel-body">
                             <form class="form-inline" role="form" action="" method="post" enctype="multipart/form-data">
+                                {{ csrf_field() }}
                                 <div class="text-center">学生编号：<input type="text" class="form-control" name="student_num" id="student_num" style="width:200px;"></div>
                                 <div class="col-md-12" style="height:600px;">
                                     <div class="demo">
@@ -48,6 +49,6 @@
             <!-- END ROW  -->
         </section>
     </section>
-
+    <script></script>
 
 @endsection

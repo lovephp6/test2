@@ -12,8 +12,8 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            <span class="label label-primary">　　财务管理　　</span>　
-                            <span class="label label-danger"><a href="{{ url('admin/school/add') }}" style="color:#FFF;">　　收取学费　　</a></span>
+                            <span class="label label-primary"><a href="{{ url('admin/property/total_money') }}" style="color:#FFF;">　　收费统计　　</a></span>　
+                            <span class="label label-danger"><a href="{{ url('admin/property/tuition_fee') }}" style="color:#FFF;">　　收取学费　　</a></span>
                             <span class="tools pull-right">
                        <a href="javascript:;" class="fa fa-chevron-down"></a>
                        <a href="javascript:;" class="fa fa-times"></a>
@@ -97,19 +97,19 @@
                                 <tr ><td colspan="6"></td></tr>
                                 <tr>
                                     <td class="form_line_height">刷　　卡</td>
-                                    <td> <input class="form-control" type="text" name="pay_card" id="money1" onblur="jisuan()" value=""></td>
+                                    <td> <input class="form-control" type="text" name="pay_card" id="money1" onblur="jisuan()" value="0"></td>
                                     <td class="form_line_height">现　　金</td>
-                                    <td> <input class="form-control in_bgw" type="text" id="money2" onblur="jisuan()" name="cash"></td>
+                                    <td> <input class="form-control in_bgw" type="text" id="money2" onblur="jisuan()" name="cash" value="0"></td>
                                     <td class="form_line_height">转　　账</td>
-                                    <td> <input class="form-control in_bgw" type="text" id="money3" onblur="jisuan()" name="transfer_accounts"></td>
+                                    <td> <input class="form-control in_bgw" type="text" id="money3" onblur="jisuan()" name="transfer_accounts" value="0"></td>
                                 </tr>
                                 <tr>
                                     <td class="form_line_height">贷　　款</td>
-                                    <td> <input class="form-control" type="text" name="loan" id="money4" onblur="jisuan()" value=""></td>
+                                    <td> <input class="form-control" type="text" name="loan" id="money4" onblur="jisuan()" value="0"></td>
                                     <td class="form_line_height">其　　他</td>
-                                    <td> <input class="form-control in_bgw" type="text" id="money5" onblur="jisuan()" name="other"></td>
+                                    <td> <input class="form-control in_bgw" type="text" id="money5" onblur="jisuan()" name="other" value="0"></td>
                                     <td class="form_line_height">合　　计</td>
-                                    <td> <input class="form-control in_bgw" type="text" id="money" onblur="jisuan()" name="total"></td>
+                                    <td> <input class="form-control in_bgw" type="text" id="money" onblur="jisuan()" name="total" value="0"></td>
                                 </tr>
                                 <tr>
                                     <td class="form_line_height">开 票 人</td>

@@ -8,8 +8,9 @@
             <div class="col-lg-12">
                 <section class="panel">
                     <header class="panel-heading">
-                        <span class="label label-primary">　　学籍档案　　</span>　
-                        <span class="label label-danger"><a href="{{ url('admin/school/add') }}" style="color:#FFF;">　　注册学籍　　</a></span>
+                        <span class="label label-primary"><a href="{{ url('admin/school/index') }}" style="color:#FFF;">　　学籍档案　　</a></span>　
+                        <span class="label label-danger"><a href="{{ url('admin/school/add') }}" style="color:#FFF;">　　注册学籍　　</a></span>　
+                        <span class="label label-danger"><a href="{{ url('admin/school/students_img') }}" style="color:#FFF;">　　上传附件　　</a></span>
                         <span class="tools pull-right">
                            <a href="javascript:;" class="fa fa-chevron-down"></a>
                            <a href="javascript:;" class="fa fa-times"></a>

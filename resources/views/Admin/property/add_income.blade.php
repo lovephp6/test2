@@ -8,8 +8,8 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            <span class="label label-primary">　　财务管理　　</span>　
-                            <span class="label label-danger"><a href="{{ url('admin/school/add') }}" style="color:#FFF;">　　填写凭证　　</a></span>
+                            <span class="label label-primary"><a href="{{ url('admin/property/income') }}" style="color:#FFF;">　　收入统计　　</a></span>　
+                            <span class="label label-danger"><a href="{{ url('admin/property/add_income') }}" style="color:#FFF;">　　收入凭证　　</a></span>
                             <span class="tools pull-right">
                        <a href="javascript:;" class="fa fa-chevron-down"></a>
                        <a href="javascript:;" class="fa fa-times"></a>

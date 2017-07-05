@@ -108,6 +108,38 @@ class SchoolController extends Controller
         }
         return view('admin/school/add');
     }
+
+    // 上传附件
+    public function students_img(Request $request)
+    {
+        if ($request->isMethod('post')) {
+            $student_num = $request->input('student_num');
+            $res = Student::where('student_num', $student_num)->first();
+            if ($res) {
+                $student_name = Student::where('student_num', $student_num)->first()['Name'];
+                $file = Input::file('file');
+                // 扩展名
+                $ext = $file->getClientOriginalExtension();
+                // 新文件名
+                $filename = date('YmdHis') . uniqid() . '.' . $ext;
+                // 将文件写入指定路径
+                $path = $file->move(base_path() . '/public/upload/img/', $filename);
+                $paths = '/public/upload/img/'. $filename;
+                $pathname['img_something'] = $paths;
+                $pathname['student_num'] = $student_num;
+                $pathname['student_name'] = $student_name;
+                if(Enclosure::create($pathname)) {
+                    return redirect()->back()->with('success', '添加成功');
+                } else {
+                    return redirect()->back()->with('error', '添加失败');
+                }
+            } else {
+                return redirect()->back()->with('error', '此学生不存在');
+            }
+        }
+
+        return view('admin/school/students_img');
+    }
     
     // 删除方法
     public function delete(Request $request)
@@ -235,38 +267,6 @@ class SchoolController extends Controller
             return view('admin/school/students_zheng',['studentMsg' => $studentMsg]);
         }
         return view('admin/school/students_zheng');
-    }
-
-    // 上传附件
-    public function students_img(Request $request)
-    {
-        if ($request->isMethod('post')) {
-            $student_num = $request->input('student_num');
-            $res = Student::where('student_num', $student_num)->first();
-            if ($res) {
-                $student_name = Student::where('student_num', $student_num)->first()['Name'];
-                $file = Input::file('file');
-                // 扩展名
-                $ext = $file->getClientOriginalExtension();
-                // 新文件名
-                $filename = date('YmdHis') . uniqid() . '.' . $ext;
-                // 将文件写入指定路径
-                $path = $file->move(base_path() . '/public/upload/img/', $filename);
-                $paths = '/public/upload/img/'. $filename;
-                $pathname['img_something'] = $paths;
-                $pathname['student_num'] = $student_num;
-                $pathname['student_name'] = $student_name;
-                if(Enclosure::create($pathname)) {
-                    return redirect()->back()->with('success', '添加成功');
-                } else {
-                    return redirect()->back()->with('error', '添加失败');
-                }
-            } else {
-                return redirect()->back()->with('error', '此学生不存在');
-            }
-        }
-
-        return view('admin/school/students_img');
     }
     
     // 学历管理

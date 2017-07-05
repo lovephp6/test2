@@ -1,4 +1,4 @@
-@extends("layouts.table_s")
+@extends("layouts.head")
 @section("contents")
     <style>
         .form_line_height{
@@ -12,8 +12,8 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            <span class="label label-primary">　　财务管理　　</span>　
-                            <span class="label label-danger"><a href="{{ url('admin/school/add') }}" style="color:#FFF;">　　支出统计　　</a></span>
+                            <span class="label label-primary"><a href="{{ url('admin/property/expenditure') }}">　　支出统计　　</a></span>　
+                            <span class="label label-danger"><a href="{{ url('admin/property/add_expenditure') }}" style="color:#FFF;">　　支出凭证　　</a></span>
                             <span class="tools pull-right">
                        <a href="javascript:;" class="fa fa-chevron-down"></a>
                        <a href="javascript:;" class="fa fa-times"></a>
@@ -54,7 +54,7 @@
                                         <td>{{ $finance->bill_number }}</td>
                                         <td>{{ $finance->payment_unit }}</td>
                                         <td>{{ $finance->handle_person }}</td>
-                                        <td>{{ $finance->abstract }}</td>
+                                        <td>{{ json_decode($finance->abstract)[0].' '.json_decode($finance->abstract)[1].' '.json_decode($finance->abstract)[2].' '.json_decode($finance->abstract)[3] }}</td>
                                         <td>{{ $finance->total }}</td>
                                         <td>{{ date('Y-m-d',$finance->collecting_date) }}</td>
                                         <td>{{ $finance->payment_method }}</td>

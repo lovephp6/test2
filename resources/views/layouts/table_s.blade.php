@@ -77,12 +77,6 @@
     <aside>
         <div id="sidebar" class="nav-collapse">
             <ul class="sidebar-menu" id="nav-accordion">
-                <li>
-                    <a href="#">
-                        <i class="fa fa-dashboard"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
                 <li class="sub-menu dcjq-parent-li">
                     <a href="boxed_page.html" class="dcjq-parent">
                         <i class="fa  fa-twitter-square" style="font-size: 20px;"></i>
@@ -94,23 +88,6 @@
                             <a href="{{ url('admin/school/index') }}">
                                 学籍档案
                             </a>
-                            <ul class="sub" style="display: none; overflow: hidden;">
-                                <li>
-                                    <a href="{{ url('admin/school/index') }}">
-                                        查看学籍
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('admin/school/add') }}">
-                                        注册学籍
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('admin/school/students_img') }}">
-                                        上传附件
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                         <li>
                             <a href="{{ url('admin/school/index') }}">
@@ -177,38 +154,14 @@
                         <span class="dcjq-icon"></span></a>
                     <ul class="sub" style="display: block; overflow: hidden;">
                         <li>
-                            <a href="{{ url('admin/property/tuition_fee') }}">
+                            <a href="{{ url('admin/property/total_money') }}">
                                 收费管理
                             </a>
-                            <ul class="sub" style="display: none; overflow: hidden;">
-                                <li>
-                                    <a href="{{ url('admin/property/tuition_fee') }}">
-                                        收取学费
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('admin/property/total_money') }}">
-                                        收费统计
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                         <li>
-                            <a href="{{ url('admin/school/index') }}">
+                            <a href="{{ url('admin/property/refund_details') }}">
                                 退费管理
                             </a>
-                            <ul class="sub" style="display: none; overflow: hidden;">
-                                <li>
-                                    <a href="{{ url('admin/property/refund') }}">
-                                        退还学费
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('admin/property/refund_details') }}">
-                                        退费管理
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                         <li>
                             <a href="{{ url('admin/property/arrears') }}">
@@ -216,38 +169,14 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url('admin/school/index') }}">
+                            <a href="{{ url('admin/property/income') }}">
                                 收入管理
                             </a>
-                            <ul class="sub" style="display: none; overflow: hidden;">
-                                <li>
-                                    <a href="{{ url('admin/property/add_income') }}">
-                                        收入凭证
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('admin/property/income') }}">
-                                        收入统计
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                         <li>
-                            <a href="{{ url('admin/school/index') }}">
+                            <a href="{{ url('admin/property/expenditure') }}">
                                 支出管理
                             </a>
-                            <ul class="sub" style="display: none; overflow: hidden;">
-                                <li>
-                                    <a href="{{ url('admin/property/add_expenditure') }}">
-                                        支出凭证
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('admin/property/expenditure') }}">
-                                        支出统计
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                         <li class="sub-menu dcjq-parent-li">
                             <a href="{{ url('admin/property/diary') }}">日记账</a>
