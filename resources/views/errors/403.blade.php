@@ -19,7 +19,7 @@
         <div class="error_pic"></div>
         <div class="error_info">
             <h2>
-                <p>对不起，您没有权限，请联系管理员！</p>
+                <p>您没有权限，请联系管理员！</p>
             </h2>
             <div class="operate">
                 <input class="global_btn btn_89bf43" onClick="location.href='{{ url('/') }}'" type="button" value="返回主页">

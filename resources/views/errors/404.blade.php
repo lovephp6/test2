@@ -5,8 +5,8 @@
     <title>出错了！您访问的页面不存在</title>
     <style type="text/css">
         * {margin:0px;padding:0px;list-style:none;text-decoration:none;}
-        body {background:url(../img/b1.jpg)}
-        .mian {width:1000px;height:600px;background:url(../img/back.jpg);margin:3% auto}
+        body {background:url({{ asset('admin/img/b1.jpg') }})}
+        .mian {width:1000px;height:600px;background:url({{ asset('admin/img/back.jpg') }});margin:3% auto}
         .error_div {width:210px;float:right;margin-right:28%;margin-top:38%;font-family:"微软雅黑"}
         .error_div a {float:left;color:#FFFBF0;width:80px;background:#8A532A;text-align:center;line-height:20px;font-size:15px;border-bottom:3px solid #683F20}
         .error_div a:hover {background:#7B4A26;}

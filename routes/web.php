@@ -18,6 +18,20 @@ Auth::routes();
 
 Route::group(['middleware'=>'auth','prefix' => 'admin', 'namespace' => 'Admin'], function(){
 //Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
+    /**
+     *  角色
+     */
+    Route::any('role/add', ['uses' => 'RoleController@add']);
+    Route::any('role/index', ['uses' => 'RoleController@index']);
+    Route::any('role/edit/{id}', ['uses' => 'RoleController@edit']);
+    Route::any('role/delete', ['uses' => 'RoleController@delete']);
+
+    // 权限
+    Route::any('permission/index', ['uses' => 'PermissionController@index']);
+    Route::any('permission/add', ['uses' => 'PermissionController@add']);
+    Route::any('permission/edit/{id}', ['uses' => 'PermissionController@edit']);
+    Route::any('permission/delete', ['uses' => 'PermissionController@delete']);
+
     // 学籍管理
     Route::get('school/index', ['uses' => 'SchoolController@index']);
     Route::any('school/add', ['uses' => 'SchoolController@add']);
@@ -51,7 +65,7 @@ Route::group(['middleware'=>'auth','prefix' => 'admin', 'namespace' => 'Admin'],
     // 证书管理
 
 
-    Route::group(['middleware' => ['role:sdsd']], function(){
+//    Route::group(['middleware' => ['role:sdsd']], function(){
         //财务管理
         //收费管理
         Route::any('property/tuition_fee', ['uses' => 'PropertyController@tuition_fee']);
@@ -109,7 +123,7 @@ Route::group(['middleware'=>'auth','prefix' => 'admin', 'namespace' => 'Admin'],
 
         // 添加日记账
         Route::any('property/add_diary', ['uses' => 'PropertyController@add_diary']);
-    });
+//    });
 
 
     /**

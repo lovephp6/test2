@@ -802,7 +802,8 @@
                     <ul class="sub" style="display: block; overflow: hidden;">
                         <li class=""><a href="{{ url('admin/school/index') }}">用户设置</a></li>
                         <li class=""><a href="{{ url('admin/school/index') }}">部门设置</a></li>
-                        <li class=""><a href="{{ url('admin/school/index') }}">权限设置</a></li>
+                        <li class=""><a href="{{ url('admin/role/index') }}">角色设置</a></li>
+                        <li class=""><a href="{{ url('admin/permission/index') }}">权限设置</a></li>
                         <li class=""><a href="{{ url('admin/school/index') }}">院系设置</a></li>
                         <li class=""><a href="{{ url('admin/school/index') }}">专业设置</a></li>
                         <li class=""><a href="{{ url('admin/school/index') }}">学制设置</a></li>
