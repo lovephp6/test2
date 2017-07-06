@@ -273,12 +273,8 @@
             <!-- BEGIN ROW  -->
             <section class="panel">
                 <header class="panel-heading">
-               <span class="label btn-info" style="width:100px;height:35px;line-height:40px;">
-                    　　人事管理　　
-                    </span>　
-                    <span class="label btn-info" style="width:100px;height:35px;">
-                    　　职工档案　　
-                    </span>
+                    <span class="label label-primary"><a href="{{ url('admin/personnel/staff') }}" style="color:#FFF;">　　职工档案　　</a></span>　
+                    <span class="label label-danger"><a href="{{ url('admin/personnel/add_staff') }}" style="color:#FFF;">　　员工入职　　</a></span>
                     <div class="pull-right">
                         <tr>
                             <td align="right"></td>

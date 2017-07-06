@@ -39,10 +39,15 @@
                                         <input type="text" class="form-control" name="description" value="{{ old('description') }}">
                                     </div>
                                 </div>
+
                                 <div class="form-group">
                                     <label class="col-sm-1 col-sm-1 control-label">分配权限: </label>
-                                    <div class="col-sm-4">
-                                        <input type="text" class="form-control" name="description" value="{{ old('description') }}">
+                                    <div class="col-sm-7">
+                                        @foreach($permissions as $permission)
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" id="inlineCheckbox1" value="{{ $permission->id }}" name="permission[]"> {{ $permission->display_name }}
+                                        </label>
+                                        @endforeach
                                     </div>
                                 </div>
                                 <div class="form-group text-center">

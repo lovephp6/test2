@@ -297,12 +297,7 @@
                         <span class="label label-inverse span-sidebar"></span>
                         <span class="dcjq-icon"></span></a>
                     <ul class="sub" style="display: block; overflow: hidden;">
-                        <li><a href="#">职工档案</a>
-                            <ul class="sub" style="display: none; overflow: hidden;">
-                                <li><a href="{{ url('admin/personnel/staff') }}">入职管理</a></li>
-                                <li><a href="{{ url('admin/personnel/add_staff') }}">员工入职</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="{{ url('admin/personnel/staff') }}">职工档案</a></li>
                         <li><a href="#">考勤管理</a>
                             <ul class="sub" style="display: none; overflow: hidden;">
                                 <li><a href="#">请假管理</a></li>
@@ -311,12 +306,7 @@
                                 <li><a href="#">考勤统计</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">工资管理</a>
-                            <ul class="sub" style="display:none; overflow:hidden;">
-                                <li><a href="{{ url('admin/personnel/attendance') }}">出勤录入</a></li>
-                                <li><a href="{{ url('admin/personnel/payroll') }}">工 资 表</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="{{ url('admin/personnel/payroll') }}">工资管理</a></li>
                         <li><a href="#">奖惩管理</a></li>
                         <li><a href="#">保险管理</a></li>
                         <li><a href="#">劳动合同</a></li>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Permission;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
@@ -17,15 +18,22 @@ class RoleController extends Controller
 
     public function add(Request $request)
     {
+        $permissions = Permission::all();
         if ($request->isMethod('post')) {
             $roles = $request->except('_token');
-            if (Role::create($roles)) {
+            $owner = new Role();
+            $owner->name = $roles['name'];
+            $owner->display_name = $roles['display_name'];
+            $owner->description = $roles['description'];
+            $res1 = $owner->save();
+            $res2 = $owner->perms()->sync($roles['permission']);
+            if ($res1 && $res2) {
                 return redirect()->back()->with('success', '添加成功');
             } else {
                 return redirect()->back()->with('error', '添加失败');
             }
         }
-        return view('admin/role/add');
+        return view('admin/role/add', ['permissions' => $permissions]);
     }
 
     public function edit(Request $request, $id)

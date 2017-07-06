@@ -8,8 +8,8 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            <span class="label label-primary">　　人事管理　　</span>　
-                            <span class="label label-danger"><a href="{{ url('admin/school/add') }}" style="color:#FFF;">　　工资管理　　</a></span>
+                            <span class="label label-primary"><a href="{{ url('admin/personnel/payroll') }}" style="color:#FFF;">　　工 资 表　　</a></span>　
+                            <span class="label label-danger"><a href="{{ url('admin/personnel/attendance') }}" style="color:#FFF;">　　出勤录入　　</a></span>
                             <span class="tools pull-right">
                            <a href="javascript:;" class="fa fa-chevron-down"></a>
                            <a href="javascript:;" class="fa fa-times"></a>
