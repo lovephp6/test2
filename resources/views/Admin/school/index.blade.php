@@ -37,6 +37,7 @@
                                         <th class="text-center sorting_desc" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="descending" style="width: 190px;">班级</th>
                                         <th class="text-center sorting_desc" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="descending" style="width: 190px;">班主任</th>
                                         <th class="text-center sorting_desc" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="descending" style="width: 190px;">入学时间</th>
+                                        <th class="text-center sorting_desc" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="descending" style="width: 190px;">宿舍</th>
                                         <th class="text-center sorting_desc" role="columnheader" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="descending" style="width: 260px;">操作</th>
                                     </tr>
                                     </thead>
@@ -55,6 +56,7 @@
                                             <td>{{ $studentsMsg->major_date }}</td>
                                             <td>{{ $studentsMsg->student_class }}</td>
                                             <td>{{ $studentsMsg->teacher }}</td>
+                                            <td>{{ date('Y-m-d',$studentsMsg->come_time) }}</td>
                                             <td>{{ date('Y-m-d',$studentsMsg->come_time) }}</td>
                                             <td>
                                                 <a class="btn btn-success btn-xs" href="{{ url('admin/school/show',['id' => $studentsMsg->id]) }}"><i class="fa  fa-plus-circle" style="font-size:18px;"></i></a>

@@ -200,7 +200,6 @@
                         </li>
                     </ul>
                 </li>
-
                 <li class="sub-menu dcjq-parent-li">
                     <a href="boxed_page.html" class="dcjq-parent">
                         <i class="fa  fa-twitter-square" style="font-size: 20px;"></i>
@@ -289,22 +288,10 @@
                         <span class="dcjq-icon"></span></a>
                     <ul class="sub" style="display: block; overflow: hidden;">
                         <li>
-                            <a href="{{ url('admin/school/index') }}">
-                                公寓分配
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ url('admin/school/index') }}">
-                                房间变更
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ url('admin/school/index') }}">
+                            <a href="{{ url('admin/hotel/index') }}">
                                 房间管理
                             </a>
                         </li>
-                        <li><a href="#">床位管理</a></li>
-                        <li><a href="#">学生考核</a></li>
                     </ul>
                 </li>
                 <li class="sub-menu dcjq-parent-li">
@@ -396,15 +383,14 @@
                         <span class="label label-inverse span-sidebar"></span>
                         <span class="dcjq-icon"></span></a>
                     <ul class="sub" style="display: block; overflow: hidden;">
-                        <li class=""><a href="{{ url('admin/school/index') }}">用户设置</a></li>
+                        <li class=""><a href="{{ url('admin/admin/index') }}">用户设置</a></li>
                         <li class=""><a href="{{ url('admin/school/index') }}">部门设置</a></li>
                         <li class=""><a href="{{ url('admin/role/index') }}">角色设置</a></li>
                         <li class=""><a href="{{ url('admin/permission/index') }}">权限设置</a></li>
-                        <li class=""><a href="{{ url('admin/school/index') }}">院系设置</a></li>
-                        <li class=""><a href="{{ url('admin/school/index') }}">专业设置</a></li>
-                        <li class=""><a href="{{ url('admin/school/index') }}">学制设置</a></li>
+                        <li class=""><a href="{{ url('admin/college/index') }}">院系设置</a></li>
+                        <li class=""><a href="{{ url('admin/major/index') }}">专业设置</a></li>
                         <li class=""><a href="{{ url('admin/school/index') }}">班级设置</a></li>
-                        <li class=""><a href="{{ url('admin/school/index') }}">学费设置</a></li>
+                        <li class=""><a href="{{ url('admin/money/index') }}">学费设置</a></li>
                         <li class=""><a href="{{ url('admin/school/index') }}">修改密码</a></li>
                         <li class=""><a href="{{ url('admin/school/index') }}">操作日志</a></li>
                     </ul>

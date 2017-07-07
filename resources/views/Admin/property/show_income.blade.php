@@ -168,7 +168,7 @@
                                         <tr style="height:40px;"></tr>
 
                                     </table>
-                                    <input type="hidden" value="{{ $income->total_num }}" id="total_num">
+                                    <input type="hidden" value="{{ $income->total_money }}" id="total_num">
                                     {{--<div class="form-group" style="margin-left:20px;">--}}
                                     <table class="table table-bordered text-center" style="width:1000px;">
                                         <tr>

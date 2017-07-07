@@ -18,7 +18,7 @@
                         </header>
                         <div class="panel-body">
                             <form class="form-inline" role="form" action="" method="post" enctype="multipart/form-data">
-                                {{ csrf_field() }}
+
                                 <div class="text-center">学生编号：<input type="text" class="form-control" name="student_num" id="student_num" style="width:200px;"></div>
                                 <div class="col-md-12" style="height:600px;">
                                     <div class="demo">

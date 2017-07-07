@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{ asset('admin/assets/data-tables/DT_bootstrap.css') }}"><!-- DATATABLE CSS -->
     <link href="{{ asset('admin/css/style.css') }}" rel="stylesheet"><!-- THEME BASIC CSS -->
     <link href="{{ asset('admin/css/style-responsive.css') }}" rel="stylesheet"><!-- THEME BASIC RESPONSIVE  CSS -->
+    <script language="javascript" src="{{ asset('admin/assets/advanced-datatable/media/js/jquery.js') }}"></script><!-- BASIC JQUERY JS  -->
     <!--[if lt IE 9]>
     <script src="{{ asset('admin/js/html5shiv.js') }}"></script>
     <script src="{{ asset('admin/js/respond.min.js') }}"></script>
@@ -272,22 +273,10 @@
                         <span class="dcjq-icon"></span></a>
                     <ul class="sub" style="display: block; overflow: hidden;">
                         <li>
-                            <a href="{{ url('admin/school/index') }}">
-                                公寓分配
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ url('admin/school/index') }}">
-                                房间变更
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ url('admin/school/index') }}">
+                            <a href="{{ url('admin/hotel/index') }}">
                                 房间管理
                             </a>
                         </li>
-                        <li><a href="#">床位管理</a></li>
-                        <li><a href="#">学生考核</a></li>
                     </ul>
                 </li>
                 <li class="sub-menu dcjq-parent-li">
@@ -379,15 +368,14 @@
                         <span class="label label-inverse span-sidebar"></span>
                         <span class="dcjq-icon"></span></a>
                     <ul class="sub" style="display: block; overflow: hidden;">
-                        <li class=""><a href="{{ url('admin/school/index') }}">用户设置</a></li>
+                        <li class=""><a href="{{ url('admin/admin/index') }}">用户设置</a></li>
                         <li class=""><a href="{{ url('admin/school/index') }}">部门设置</a></li>
                         <li class=""><a href="{{ url('admin/role/index') }}">角色设置</a></li>
                         <li class=""><a href="{{ url('admin/permission/index') }}">权限设置</a></li>
-                        <li class=""><a href="{{ url('admin/school/index') }}">院系设置</a></li>
-                        <li class=""><a href="{{ url('admin/school/index') }}">专业设置</a></li>
-                        <li class=""><a href="{{ url('admin/school/index') }}">学制设置</a></li>
+                        <li class=""><a href="{{ url('admin/college/index') }}">院系设置</a></li>
+                        <li class=""><a href="{{ url('admin/major/index') }}">专业设置</a></li>
                         <li class=""><a href="{{ url('admin/school/index') }}">班级设置</a></li>
-                        <li class=""><a href="{{ url('admin/school/index') }}">学费设置</a></li>
+                        <li class=""><a href="{{ url('admin/money/index') }}">学费设置</a></li>
                         <li class=""><a href="{{ url('admin/school/index') }}">修改密码</a></li>
                         <li class=""><a href="{{ url('admin/school/index') }}">操作日志</a></li>
                     </ul>
@@ -413,7 +401,7 @@
     </div>
 </footer>
 <!-- BEGIN JS -->
-<script language="javascript" src="{{ asset('admin/assets/advanced-datatable/media/js/jquery.js') }}"></script><!-- BASIC JQUERY JS  -->
+
 <script src="{{ asset('admin/js/bootstrap.min.js') }}" ></script><!-- BOOTSTRAP JS  -->
 <script src="{{ asset('admin/js/jquery.dcjqaccordion.2.7.js') }}"></script><!-- ACCORDING JS -->
 <script src="{{ asset('admin/js/jquery.scrollTo.min.js') }}" ></script><!-- SCROLLTO JS  -->

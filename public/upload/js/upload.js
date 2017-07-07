@@ -157,7 +157,7 @@ $('#student_num').change(function() {
             fileSizeLimit: 200 * 1024 * 1024, // 200 M
             fileSingleSizeLimit: 50 * 1024 * 1024    // 50 M
         });
-		uploader.options.formData._token = 'hStUNrWIJ8NrUKwtz5eArjvoke0Lv8cjWIzdnwBd';
+		uploader.options.formData._token = '43yYneHnXp3doASXIElZ4kR3OVj1V7tSglVbmoES';
         // 拖拽时不接受 js, txt 文件。
         uploader.on('dndAccept', function (items) {
             var denied = false,

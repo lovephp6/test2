@@ -1,12 +1,13 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
-use Zizaco\Entrust\EntrustRole;
 
-class Role extends EntrustRole
+class Hotel extends Model
 {
+    protected $table = 'hotel';
+
     protected $primaryKey = 'id';
 
     protected $guarded = [];
@@ -22,10 +23,4 @@ class Role extends EntrustRole
     {
         return $value;
     }
-
-    public function getUsers()
-    {
-        return $this->belongsToMany('App\Role','role_user','user_id','role_id');
-    }
-
 }

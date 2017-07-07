@@ -23,16 +23,16 @@
                             <form class="form-inline" role="form">
                                 <div class="form-group">
                                     <label class="" for="exampleInputEmail2">选择日期：</label>
-                                    <input type="email" class="form-control" id="LAY_demorange_s" placeholder="开始日"> -
-                                    <input type="email" class="form-control" id="LAY_demorange_e" placeholder="截止日">　　　
+                                    <input type="text" class="form-control" id="LAY_demorange_s" placeholder="开始日"> -
+                                    <input type="text" class="form-control" id="LAY_demorange_e" placeholder="截止日">　　　
                                 </div>
                                 <div class="form-group">
                                     <label class="" for="exampleInputEmail2">付款单位：</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="">　　　
+                                    <input type="text" class="form-control" id="exampleInputEmail2" placeholder="">　　　
                                 </div>
                                 <div class="form-group">
                                     <label class="" for="exampleInputEmail2">经 手 人：</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="">　
+                                    <input type="text" class="form-control" id="exampleInputEmail2" placeholder="">　
                                 </div>
                                 <button type="submit" class="btn btn-info">　确认　</button>
                             </form><br>
@@ -59,7 +59,7 @@
                                         <td>{{ date('Y-m-d',$finance->collecting_date) }}</td>
                                         <td>{{ $finance->payment_method }}</td>
                                         <td>
-                                            <a class="btn btn-success btn-xs" href="{{ url('admin/property/show_expenditure',['id' => $finance->id]) }}"><i class="fa  fa-plus-circle" style="font-size:18px;"></i></a>
+                                            <a class="btn btn-success btn-xs" href="{{ url('admin/property/show_income',['id' => $finance->id]) }}"><i class="fa  fa-plus-circle" style="font-size:18px;"></i></a>
                                             <a class="btn btn-primary btn-xs" href="{{ url('admin/property/edit_expenditure',['id' => $finance->id]) }}"><i class="fa fa-pencil" style="font-size:18px;"></i></a>
                                             <a class="btn btn-danger btn-xs" href="javascript:void(0);" onclick="del('{{ url('admin/property/delete_income') }}',{{ $finance->id }},'{{ csrf_token() }}')"><i class="fa  fa-trash-o" style="font-size:18px;"></i></a>
                                         </td>

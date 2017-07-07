@@ -23,17 +23,17 @@
                             <form class="form-inline" role="form">
                                 <div class="form-group">
                                     <label class="" for="exampleInputEmail2">选择日期：</label>
-                                    <input type="email" class="form-control" id="LAY_demorange_s" placeholder="开始日"> -
-                                    <input type="email" class="form-control" id="LAY_demorange_e" placeholder="截止日">　　　
+                                    <input type="text" class="form-control" id="LAY_demorange_s" placeholder="开始日"> -
+                                    <input type="text" class="form-control" id="LAY_demorange_e" placeholder="截止日">　　　
                                 </div>
 
                                 <div class="form-group">
                                     <label class="" for="exampleInputEmail2">付款单位：</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="">　　　
+                                    <input type="text" class="form-control" id="exampleInputEmail2" placeholder="">　　　
                                 </div>
                                 <div class="form-group">
                                     <label class="" for="exampleInputEmail2">经 手 人：</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="">　
+                                    <input type="text" class="form-control" id="exampleInputEmail2" placeholder="">　
                                 </div>
                                 <button type="submit" class="btn btn-info">　确认　</button>
                             </form><br>

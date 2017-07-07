@@ -18,6 +18,11 @@ Auth::routes();
 
 Route::group(['middleware'=>'auth','prefix' => 'admin', 'namespace' => 'Admin'], function(){
 //Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
+    // 添加管理员
+    Route::get('admin/index', ['uses' => 'AdminController@index']);
+    Route::get('admin/add', ['uses' => 'AdminController@add']);
+    Route::get('admin/edit/{id}', ['uses' => 'AdminController@edit']);
+    Route::get('admin/delete', ['uses' => 'AdminController@delete']);
     /**
      *  角色
      */
@@ -151,6 +156,31 @@ Route::group(['middleware'=>'auth','prefix' => 'admin', 'namespace' => 'Admin'],
     // 出勤录入
     Route::any('personnel/attendance', ['uses' => 'PersonnelController@attendance']);
 
+    // 公寓管理
+    Route::any('hotel/index', ['uses'=>'HotelController@index']);
+    Route::post('hotel/delete', ['uses'=>'HotelController@delete']);
+    Route::any('hotel/edit/{id}', ['uses'=>'HotelController@edit']);
+
+    Route::any('hotel/show', ['uses' => 'HotelController@show']);
+
+
+    /**
+     *  系统设置
+     */
+    // 学费设置
+    Route::get('money/index', ['uses' => 'MoneyController@index']);
+    Route::any('money/add', ['uses' => 'MoneyController@add']);
+
+    // 院系设置
+    Route::get('college/index', ['uses' => 'CollegeController@index']);
+    Route::any('college/add', ['uses' => 'CollegeController@add']);
+    Route::any('college/delete', ['uses' => 'CollegeController@delete']);
+    Route::any('college/edit', ['uses' => 'CollegeController@edit']);
+
+    // 专业设置
+    Route::get('major/index', ['uses' => 'MajorController@index']);
+    Route::any('major/add', ['uses' => 'MajorController@add']);
+    Route::any('major/delete', ['uses' => 'MajorController@delete']);
+    Route::any('major/edit', ['uses' => 'MajorController@edit']);
+
 });
-
-
