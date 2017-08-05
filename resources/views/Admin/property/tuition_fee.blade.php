@@ -54,34 +54,38 @@
                                 </tr>
                                 <tr>
                                     <td class="form_line_height">专业名称</td>
-                                    <td> <input class="form-control" type="text" name="" value="{{ isset($studentMsg) ? $studentMsg->major_name : '' }}"></td>
+                                    <td> <input class="form-control" type="text" id="major_name" name="" value="{{ isset($studentMsg) ? $studentMsg->major_name : '' }}"></td>
                                     <td class="form_line_height">专业类型</td>
-                                    <td> <input class="form-control in_bgw" type="text" name=""  value="{{ isset($studentMsg) ? $studentMsg->major_type : '' }}"></td>
+                                    <td> <input class="form-control in_bgw" type="text" id="major_type" name=""  value="{{ isset($studentMsg) ? $studentMsg->major_type : '' }}"></td>
                                     <td class="form_line_height">学　　制</td>
-                                    <td> <input class="form-control in_bgw" type="text" name=""  value="{{ isset($studentMsg) ? $studentMsg->major_date : '' }}"></td>
+                                    <td> <input class="form-control in_bgw" type="text" id="major_date" name=""  value="{{ isset($studentMsg) ? $studentMsg->major_date : '' }}"></td>
                                 </tr>
                                 <tr ><td colspan="6">学费信息</td></tr>
                                 <tr >
                                     <td class="form_line_height">缴费期限</td>
                                     <td colspan="5">
-                                        <select class="form-control" name="payment_period">
-                                            <option>一年</option>
-                                            <option>三年</option>
+                                        <select class="form-control" name="payment_period" id="qixian" onchange="gettimes('{{ url('admin/money/getmoney') }}', '{{ csrf_token() }}')">
+                                            <option value="">请选择学年</option>
+                                            <option value="1">第一年</option>
+                                            <option value="2">第二年</option>
+                                            <option value="3">第三年</option>
                                         </select>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="form_line_height">学　　费</td>
-                                    <td> <input class="form-control in_bgw" type="text" name="tuition_standard" value="2222"></td>
+                                    <td> <input class="form-control in_bgw" type="text" name="tuition_standard" value=""></td>
                                     <td class="form_line_height">住宿标准</td>
                                     <td>
-                                        <select class="form-control" name="home_standard">
-                                            <option>39800</option>
-                                            <option>39800</option>
+                                        <select class="form-control" name="home_standard" id="gethmoney" onchange="gethome('{{ url('admin/staymoney/gethomes') }}', '{{ csrf_token() }}')">
+                                            <option>请选择住宿标准</option>
+                                            @foreach($homeMsgs as $homeMsg)
+                                            <option value="{{ $homeMsg->stay_standard }}">{{ $homeMsg->stay_standard }}</option>
+                                            @endforeach
                                         </select>
                                     </td>
                                     <td class="form_line_height">住 宿 费</td>
-                                    <td><input class="form-control in_bgw" type="text" name="home_expense"></td>
+                                    <td><input class="form-control in_bgw" type="text" id="stmoney" name="home_expense"></td>
                                 </tr>
                                 <tr>
                                     <td class="form_line_height">技 能 费</td>
@@ -112,27 +116,31 @@
                                     <td class="form_line_height">优惠活动</td>
                                     <td>
                                         <select class="form-control" name="part_activities">
-                                            <option>1</option>
-                                            <option>2</option>
+                                            <option value="">请选择</option>
+                                            @foreach($avtives as $avtive)
+                                            <option value="{{ $avtive->active_name }}">{{ $avtive->active_name }}</option>
+                                            @endforeach
                                         </select>
                                     </td>
-                                    <td class="form_line_height">助学减免</td>
-                                    <td> <select class="form-control" name="student_relief">
-                                            <option>1</option>
-                                            <option>2</option>
+                                    <td class="form_line_height">助学活动</td>
+                                    <td> <select class="form-control" name="student_relief" id="gethelps" onchange="gethelp('{{ url('admin/helps/gethelps') }}', '{{ csrf_token() }}')">
+                                            <option value="">请选择</option>
+                                             @foreach($helps as $help)
+                                                <option value="{{ $help->helps_name }}">{{ $help->helps_name }}</option>
+                                            @endforeach
                                         </select>
                                     </td>
-                                    <td class="form_line_height">减免凭证</td>
-                                    <td> <input class="form-control in_bgw" type="text" name="invoice_number"></td>
+                                    <td class="form_line_height">减免金额</td>
+                                    <td> <input class="form-control in_bgw" type="text" name="invoice_number" id="facthelp" value="0"></td>
                                 </tr>
                                 <tr ><td colspan="6">缴费信息</td></tr>
                                 <tr>
                                     <td class="form_line_height">票据编号</td>
-                                    <td> <input class="form-control" type="text" name="pay_card" id="money1" onblur="jisuan()" value="0"></td>
+                                    <td> <input class="form-control" type="text" name="pay_card" value="0"></td>
                                     <td class="form_line_height">应缴金额</td>
-                                    <td> <input class="form-control in_bgw" type="text" id="money2" onblur="jisuan()" name="actual_money" value="0"></td>
+                                    <td> <input class="form-control in_bgw" type="text" id="factmoneys"  name="actual_money" value="0"></td>
                                     <td class="form_line_height">缴费日期</td>
-                                    <td> <input class="form-control in_bgw" type="text" id="money3" onblur="jisuan()" name="transfer_accounts" value="0"></td>
+                                    <td> <input class="form-control in_bgw" type="text"  name="transfer_accounts" value="{{ date('Y-m-d',time()) }}"></td>
                                 </tr>
                                 <tr>
                                     <td class="form_line_height">刷卡缴费</td>
@@ -147,7 +155,7 @@
                                     <td> <input class="form-control" type="text" name="loan" id="money4" onblur="jisuan()" value="0"></td>
                                     <td class="form_line_height">其他缴费</td>
                                     <td> <input class="form-control in_bgw" type="text" id="money5" onblur="jisuan()" name="other" value="0"></td>
-                                    <td class="form_line_height">合　　计</td>
+                                    <td class="form_line_height">实缴金额</td>
                                     <td> <input class="form-control in_bgw" type="text" id="money" onblur="jisuan()" name="total" value="0"></td>
                                 </tr>
                                 <tr ><td colspan="6">收款信息</td></tr>
@@ -175,7 +183,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="6"><button class="btn btn-info">　　提交　　</button>　　 <a href="{{ url('admin/property/shouju') }}" class="btn btn-info">　　预览　　</a></td>
+                                    <td colspan="6"><button class="btn btn-info"  id="tijiao">　　提交　　</button>　　 <a href="{{ url('admin/property/shouju') }}" class="btn btn-info">　　预览　　</a></td>
                                 </tr>
                             </table>
                             </form>
@@ -195,11 +203,53 @@
             var num4 = $('#money4').val() || 0;
             var num5 = $('#money5').val() || 0;
             var result = parseFloat(num1)+parseFloat(num2)+parseFloat(num3)+parseFloat(num4)+parseFloat(num5);
+            var yingmoney = $('#factmoneys').val();
+            var jianqu =  parseFloat(yingmoney) - parseFloat(result);
             $('#money').val(result);
         }
-//        var aa = $('input[name=tuition_standard]').val();
-//        alert(aa);
-//        $('input[name=zatotal_money]').val();
+
+        function gettimes(url, token) {
+            var xuenian = $('#qixian option:selected').val();
+            var xuezhi = $('#major_date').val();
+            var zhuanye = $('#major_name').val();
+            $.post(url, {'_token' : token, 'major_name' : zhuanye, 'major_date' : xuezhi, 'payment_period' : xuenian}, function(data){
+                $('input[name=tuition_standard]').val(data[0].tuition_standard);
+                $('input[name=skill_money]').val(data[0].skill_money);
+                $('input[name=school_money]').val(data[0].school_money);
+                $('input[name=military_money]').val(data[0].military_money);
+                $('input[name=bedding_money]').val(data[0].bedding_money);
+                $('input[name=clothing_money]').val(data[0].clothing_money);
+                $('input[name=book_money]').val(data[0].book_money);
+                $('input[name=safe_money]').val(data[0].safe_money);
+                $('input[name=certtifate_money]').val(data[0].certtifate_money);
+                $('input[name=zatotal_money]').val(data[0].zatotal_money);
+            });
+        }
+
+        function gethome(url, token) {
+            var bz = $('#gethmoney option:selected').val();
+            $.post(url, {'_token' : token, 'bz' : bz}, function(data){
+                $('#stmoney').val(data.stay_money);
+                var a = $('input[name=zatotal_money]').val();
+                var b = $('#stmoney').val();
+                $('input[name=zatotal_money]').val(parseFloat(a)+parseFloat(b));
+                $('#factmoneys').val($('input[name=zatotal_money]').val());
+            });
+
+        }
+
+        function gethelp(url, token) {
+            var bz = $('#gethelps option:selected').val();
+            $.post(url, {'_token' : token, 'bz' : bz}, function(data){
+                $('#facthelp').val(data.helps_money);
+                var tolmoney = $('input[name=zatotal_money]').val();
+                var amoney = $('#facthelp').val();
+                $('#factmoneys').val(parseFloat(tolmoney) - parseFloat(amoney));
+            });
+
+        }
+
+
     </script>
 
 @stop

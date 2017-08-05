@@ -292,6 +292,11 @@
                                 房间管理
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ url('admin/check/index') }}">
+                                入住管理
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="sub-menu dcjq-parent-li">
@@ -389,8 +394,12 @@
                         <li class=""><a href="{{ url('admin/permission/index') }}">权限设置</a></li>
                         <li class=""><a href="{{ url('admin/college/index') }}">院系设置</a></li>
                         <li class=""><a href="{{ url('admin/major/index') }}">专业设置</a></li>
+                        <li class=""><a href="{{ url('admin/lschool/index') }}">学制设置</a></li>
+                        <li class=""><a href="{{ url('admin/staymoney/index') }}">住宿设置</a></li>
                         <li class=""><a href="{{ url('admin/school/index') }}">班级设置</a></li>
                         <li class=""><a href="{{ url('admin/money/index') }}">学费设置</a></li>
+                        <li class=""><a href="{{ url('admin/actives/index') }}">活动设置</a></li>
+                        <li class=""><a href="{{ url('admin/helps/index') }}">助学设置</a></li>
                         <li class=""><a href="{{ url('admin/school/index') }}">修改密码</a></li>
                         <li class=""><a href="{{ url('admin/school/index') }}">操作日志</a></li>
                     </ul>

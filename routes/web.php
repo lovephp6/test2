@@ -160,8 +160,11 @@ Route::group(['middleware'=>'auth','prefix' => 'admin', 'namespace' => 'Admin'],
     Route::any('hotel/index', ['uses'=>'HotelController@index']);
     Route::post('hotel/delete', ['uses'=>'HotelController@delete']);
     Route::any('hotel/edit/{id}', ['uses'=>'HotelController@edit']);
-
     Route::any('hotel/show', ['uses' => 'HotelController@show']);
+
+    // 入住管理
+    Route::get('check/index', ['uses' => 'CheckController@index']);
+    Route::any('check/add', ['uses' => 'CheckController@add']);
 
 
     /**
@@ -170,6 +173,9 @@ Route::group(['middleware'=>'auth','prefix' => 'admin', 'namespace' => 'Admin'],
     // 学费设置
     Route::get('money/index', ['uses' => 'MoneyController@index']);
     Route::any('money/add', ['uses' => 'MoneyController@add']);
+    Route::any('money/getmajor', ['uses' => 'MoneyController@getmajor']);
+    Route::any('money/getxuezhi', ['uses' => 'MoneyController@getxuezhi']);
+    Route::any('money/getmoney', ['uses' => 'MoneyController@getmoney']);
 
     // 院系设置
     Route::get('college/index', ['uses' => 'CollegeController@index']);
@@ -182,5 +188,31 @@ Route::group(['middleware'=>'auth','prefix' => 'admin', 'namespace' => 'Admin'],
     Route::any('major/add', ['uses' => 'MajorController@add']);
     Route::any('major/delete', ['uses' => 'MajorController@delete']);
     Route::any('major/edit', ['uses' => 'MajorController@edit']);
+
+    // 学制设置
+   Route::get('lschool/index', ['uses' => 'LschoolController@index']);
+   Route::post('lschool/add', ['uses' => 'LschoolController@add']);
+   Route::post('lschool/edit', ['uses' => 'LschoolController@edit']);
+   Route::post('lschool/delete', ['uses' => 'LschoolController@delete']);
+
+   // 住宿设置
+    Route::get('staymoney/index', ['uses' => 'StaymoneyController@index']);
+    Route::post('staymoney/add', ['uses' => 'StaymoneyController@add']);
+    Route::post('staymoney/edit', ['uses' => 'StaymoneyController@edit']);
+    Route::post('staymoney/delete', ['uses' => 'StaymoneyController@delete']);
+    Route::post('staymoney/gethomes', ['uses' => 'StaymoneyController@gethomes']);
+
+    // 活动设置
+    Route::get('actives/index', ['uses' => 'ActivesController@index']);
+    Route::post('actives/add', ['uses' => 'ActivesController@add']);
+    Route::post('actives/edit', ['uses' => 'ActivesController@edit']);
+    Route::post('actives/delete', ['uses' => 'ActivesController@delete']);
+
+    // 助学设置
+    Route::get('helps/index', ['uses' => 'HelpsController@index']);
+    Route::post('helps/add', ['uses' => 'HelpsController@add']);
+    Route::post('helps/edit', ['uses' => 'HelpsController@edit']);
+    Route::post('helps/delete', ['uses' => 'HelpsController@delete']);
+    Route::post('helps/gethelps', ['uses' => 'HelpsController@gethelps']);
 
 });

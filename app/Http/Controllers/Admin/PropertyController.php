@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Model\Actives;
 use App\Model\Arrears;
 use App\Model\Charge;
 use App\Model\Finance;
+use App\Model\Helps;
 use App\Model\Refund;
+use App\Model\Staymoney;
 use App\Model\Student;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -14,13 +17,16 @@ class PropertyController extends Controller
 {
     public function Tuition_fee(Request $request)
     {
+        $homeMsgs = Staymoney::all();
+        $avtives = Actives::all();
+        $helps = Helps::all();
         if($request->isMethod('post')) {
             $card = $request->input('CardNo');
             $studentMsg = Student::where('CardNo', $card)->first();;
-            return view('admin/property/tuition_fee', ['studentMsg' => $studentMsg]);
+            return view('admin/property/tuition_fee', compact(['studentMsg', 'homeMsgs', 'avtives', 'helps']));
 
         }
-        return view('admin/property/tuition_fee');
+        return view('admin/property/tuition_fee', compact('homeMsgs', 'avtives', 'helps'));
     }
     
     // 插入数据
@@ -28,7 +34,9 @@ class PropertyController extends Controller
     {
         if ($request->isMethod('post')) {
             $res = $request->except('_token');
-            if (Charge::create($res)){
+            $aa['cost_state'] = 1;
+            $res2 = Student::where('CardNo', $res['CardNo'])->update($aa);
+            if (Charge::create($res) && $res2){
                 return redirect()->back()->with('success', '添加成功');
             } else {
                 return redirect()->back()->with('error', '添加失败');
